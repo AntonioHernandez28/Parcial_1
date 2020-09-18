@@ -31,6 +31,24 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
+function challenge1(){
+    var n = prompt("Cuantos botones desea agregar?"); 
+
+    if (n > nombres.length){
+        alert("Hay mas botones que nombres en el arreglo"); 
+    }
+    else{
+        for(var i = 0; i < n; i++){
+        console.log(nombres[i]); 
+        var btn = document.createElement("button"); 
+        btn.textContent = nombres[i] + ' '; 
+        document.getElementById("dummy").appendChild(btn); 
+    }
+
+    }
+
+  
+}
 
 
 // ************** PARTE 2    **************
@@ -42,9 +60,33 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
-
+function challenge2(){
+    for(var i = 0; i < nombres.length; i++){
+        console.log(nombres[i].toLocaleUpperCase()); 
+    }
+}
 
 // ************** PARTE 3    **************
+
+var Dog = function(name, color, raza){
+    this.name = name; 
+    this.color = color; 
+    this.raza = raza; 
+
+    this.printInfo = function(){
+        console.log("Name: " + this.name + " Color: " + this.color + " Raza: " + this.raza); 
+    }
+}; 
+
+function challenge3(){
+    var bergen = new Dog("Bergen", "negro", "Pastor Aleman"); 
+    var nino = new Dog("Nino", "Blanco", "Gato"); 
+    var Atenea = new Dog("Atenea", "Negro", "Pastor Ingles"); 
+
+    bergen.printInfo(); 
+    nino.printInfo(); 
+    Atenea.printInfo(); 
+}
 
 /**
 
@@ -56,7 +98,6 @@ A) Escribe un constructor que te permita generar objetos de tipo "Dog" que recib
 
 
 B) Utilizando el constructor crea 3 objectos con diferentes valores y escribe en consola cada objeto.
-
 
 *****BONUS**** 10  puntos
 
